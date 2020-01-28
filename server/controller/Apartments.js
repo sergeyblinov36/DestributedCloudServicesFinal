@@ -167,7 +167,7 @@ class ApartmentController {
                 if (currrApr.openHouse.open && currrApr.openHouse.public){ //if both true
                     //check if user id already sing himself
                     if (currrApr.usersCamming.filter( usersCamming => String(usersCamming.user) == String(req.user._id) ).length  > 0 ) 
-                        return res.status(400).send({message: 'User allrady sign to open house' });  
+                        return res.status(200).send({message: 'User allrady sign to open house' });
                             
                     //Add user id to array
                     currrApr.usersCamming.unshift({ user: req.user._id });
