@@ -115,7 +115,7 @@ class UserController {
         try{
             //Chack if user exist in DB
             const usrExist= await User.findOne({email: req.params.email});
-            if(!user){
+            if(!usrExist){
                 return res.status(404).send({message:'User is not found'});
             }
             //Logout
